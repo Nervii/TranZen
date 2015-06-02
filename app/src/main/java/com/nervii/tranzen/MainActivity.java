@@ -7,9 +7,11 @@ import android.net.wifi.p2p.WifiP2pManager;
 import android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.Console;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,10 +45,12 @@ public class MainActivity extends ActionBarActivity {
         mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
             @Override
             public void onSuccess() {
+                Log.d(this.toString(), "Success discovering peers");
             }
 
             @Override
             public void onFailure(int reasonCode) {
+                Log.d(this.toString(), "Error discovering peers: " + reasonCode);
             }
         });
     }
