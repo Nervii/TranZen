@@ -21,7 +21,7 @@ public class WiFiDirectBroadcastReceiver extends BroadcastReceiver {
         this.mManager = manager;
         this.mChannel = channel;
         this.mActivity = activity;
-        myPeerListListener = new MyPeerListListener();
+        myPeerListListener = new MyPeerListListener(mActivity);
     }
 
     @Override
